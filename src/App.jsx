@@ -1,4 +1,4 @@
-import SurveyComponent from "../views/Survey";
+import SurveyComponent from "./views/Survey";
 
 function App() {
   return (

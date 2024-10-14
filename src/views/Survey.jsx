@@ -1,7 +1,7 @@
 import { SurveyModel } from "survey-core";
 import { Survey } from "survey-react-ui";
 import 'survey-core/defaultV2.min.css';
-import surveyJSON from "../src/assets/surveyJSON";
+import surveyJSON from "../assets/surveyJSON";
 
 export default function SurveyComponent() {
   const survey = new SurveyModel(surveyJSON);
