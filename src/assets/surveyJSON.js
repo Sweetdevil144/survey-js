@@ -73,14 +73,14 @@ const survey = {
         },
         {
           type: "comment",
-          name: "dislikeImprovements",
+          name: "ai-dislikeImprovements",
           title: "What improvements can be made from our side?",
           visibleIf: "{aiFeatureSatisfaction} <= 2",
           isRequired: true,
         },
         {
           type: "comment",
-          name: "generalImprovements",
+          name: "ai-generalImprovements",
           title: "What can we improve to enhance your experience?",
           visibleIf:
             "{aiFeatureSatisfaction} <= 4 && {aiFeatureSatisfaction} > 2",
@@ -88,7 +88,7 @@ const survey = {
         },
         {
           type: "comment",
-          name: "favoriteFeature",
+          name: "ai-favoriteFeature",
           title: "Which feature did you love the most?",
           visibleIf: "{aiFeatureSatisfaction} > 4",
           isRequired: true,
