@@ -42,12 +42,7 @@
           "type": "checkbox",
           "name": "featuresUsed",
           "title": "Which features have you used?",
-          "choices": [
-            "AI Assistance",
-            "Project Collaboration",
-            "Secure Workspace",
-            "Flexternships"
-          ],
+          "api": "http://localhost:3000/api/choices",
           "isRequired": true
         },
         {
