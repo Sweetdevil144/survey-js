@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Numbering Element Styling */
+.sd-element__title .sd-element__num {
+    font-family: Montserrat;
+    font-size: 1rem;
+    color: black;
+}
+
+.sd-element__title .sv-string-viewer.sv-string-viewer--multiline, span {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: normal;
+}
+
+/* Star Item */
+.sd-rating__item-star--selected svg,
+.sd-rating__item-star--selected:not(.sd-rating__item-star--preview):focus-within svg {
+    fill: #FF9F43 !important;
+    color: #FF9F43;
+}
+
+.sd-rating__item-star:not(.sd-rating__item-star--preview):focus-within svg,
+.sd-rating__item-star--selected:not(.sd-rating__item-star--preview):focus-within svg,
+.sd-rating__item-star svg {
+    stroke: #FF9F43;
+}
+
+/* Star Container */
+
+.sd-scrollable-container:not(.sd-scrollable-container--compact) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+fieldset {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Min-Max Description Alignment */
+.sd-rating__max-text {
+    position: absolute;
+    left:0;
+    bottom: 0;
+}
+
+.sd-rating__min-text {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* Emoji Styling */
+.sd-rating__item-smiley {
+    background-color: #838889;
+}
+
+.sd-rating__item-smiley:nth-child(2)::after {
+    content: "😣";
+    position: absolute;
+    right: 0;
+    font-size: 3.1rem;
+}
+
+.sd-rating__item-smiley:nth-child(3)::after {
+    content: "🙁";
+    position: absolute;
+    right: 0;
+    font-size: 3rem;
+}
+
+.sd-rating__item-smiley:nth-child(4)::after {
+    content: "😐";
+    position: absolute;
+    right: 0;
+    font-size: 3rem;
+}
+
+.sd-rating__item-smiley:nth-child(5)::after {
+    content: "🙂";
+    position: absolute;
+    right: 0;
+    font-size: 3rem;
+}
+
+.sd-rating__item-smiley:nth-child(6)::after {
+    content: "😄";
+    position: absolute;
+    right: 0px;
+    font-size: 3rem;
+}
+
+.sd-rating__item-smiley--selected {
+    border-color: white;
+}
+
+/* Description CSS */
+.sv-string-viewer.sv-string-viewer--multiline {
+    
+}
+
+/* Rating (1-5) Button CSS */
+.sd-rating__item {
+    border-radius: 6px;
+}
+
+.sd-rating__item--fixed-size {
+    width: 44px;
+    height: 44px;
+}
+
+.sd-rating__item--selected {
+    background: var(--Secondary-500---Main, #0185E4);
+    width: 44px;
+}
