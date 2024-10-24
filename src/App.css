@@ -35,7 +35,6 @@
 .sd-rating__item-star--selected:not(.sd-rating__item-star--preview):focus-within svg,
 .sd-rating__item-star svg {
     stroke: #FF9F43;
-    /* I need to make the svf bolder */
     stroke-width: 3.5;
 }
 
@@ -75,35 +74,35 @@ fieldset {
 .sd-rating__item-smiley:nth-child(2)::after {
     content: "😣";
     position: absolute;
-    right: -2px;
+    right: -px;
     font-size: 3.1rem;
 }
 
 .sd-rating__item-smiley:nth-child(3)::after {
     content: "🙁";
     position: absolute;
-    right: -2px;
+    right: -px;
     font-size: 3rem;
 }
 
 .sd-rating__item-smiley:nth-child(4)::after {
     content: "😐";
     position: absolute;
-    right: -2px;
+    right: -px;
     font-size: 3rem;
 }
 
 .sd-rating__item-smiley:nth-child(5)::after {
     content: "🙂";
     position: absolute;
-    right: -2px;
+    right: -px;
     font-size: 3rem;
 }
 
 .sd-rating__item-smiley:nth-child(6)::after {
     content: "😄";
     position: absolute;
-    right: -2px;
+    right: -px;
     font-size: 3rem;
 }
 
