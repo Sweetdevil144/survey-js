@@ -63,35 +63,35 @@ fieldset {
 .sd-rating__item-smiley:nth-child(2)::after {
     content: "😣";
     position: absolute;
-    right: 0;
+    right: -2px;
     font-size: 3.1rem;
 }
 
 .sd-rating__item-smiley:nth-child(3)::after {
     content: "🙁";
     position: absolute;
-    right: 0;
+    right: -2px;
     font-size: 3rem;
 }
 
 .sd-rating__item-smiley:nth-child(4)::after {
     content: "😐";
     position: absolute;
-    right: 0;
+    right: -2px;
     font-size: 3rem;
 }
 
 .sd-rating__item-smiley:nth-child(5)::after {
     content: "🙂";
     position: absolute;
-    right: 0;
+    right: -2px;
     font-size: 3rem;
 }
 
 .sd-rating__item-smiley:nth-child(6)::after {
     content: "😄";
     position: absolute;
-    right: 0px;
+    right: -2px;
     font-size: 3rem;
 }
 
