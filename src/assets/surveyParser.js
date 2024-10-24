@@ -3,7 +3,7 @@ export const surveyParser = async (data) => {
     if (typeof item === 'object' && !Array.isArray(item) && item !== null) {
       for (const key in item) {
         if (Object.prototype.hasOwnProperty.call(item, key)) {
-          if (item.type === 'checkbox' && item.name === 'top_leaders' && item.api) {
+          if (item.name === 'top_leaders') {
             await fetchLeaders(item);
           } else {
             await processData(item[key]);
@@ -22,7 +22,6 @@ export const surveyParser = async (data) => {
   return clonedData;
 };
 
-
 const fetchLeaders = async (item) => {
   try {
     const res = await fetch(item.api);
@@ -30,12 +29,16 @@ const fetchLeaders = async (item) => {
       throw new Error(`API Error: ${res.status}`);
     }
     const { leaders } = await res.json();
+
     item.choices = leaders.map((leader) => {
       return {
         value: leader.name,
-        text: `<img src="${leader.imageUrl}" alt="${leader.name}" style="border-radius: 50%; width: 30px; height: 30px;" /> ${leader.name}`
+        text: `![${leader.name}](${leader.imageUrl}) ${leader.name}`
       };
     });
+    
+    console.log(item.choices)
+
     delete item.api;
   } catch (error) {
     console.error('Error fetching leaders:', error);
