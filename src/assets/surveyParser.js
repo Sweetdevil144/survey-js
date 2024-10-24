@@ -22,6 +22,7 @@ export const surveyParser = async (data) => {
   return clonedData;
 };
 
+
 const fetchLeaders = async (item) => {
   try {
     const res = await fetch(item.api);
@@ -30,7 +31,10 @@ const fetchLeaders = async (item) => {
     }
     const { leaders } = await res.json();
     item.choices = leaders.map((leader) => {
-      return `${leader.name} ![leader image](${leader.imageUrl},size=30x30)`;
+      return {
+        value: leader.name,
+        text: `<img src="${leader.imageUrl}" alt="${leader.name}" style="border-radius: 50%; width: 30px; height: 30px;" /> ${leader.name}`
+      };
     });
     delete item.api;
   } catch (error) {
