@@ -48,7 +48,7 @@
 
 fieldset {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 }
@@ -71,35 +71,35 @@ fieldset {
     background-color: #838889;
 }
 
-.sd-rating__item-smiley:nth-child(2)::after {
+.sd-rating__item-smiley:nth-child(3)::after {
     content: "😣";
     position: absolute;
     right: -px;
     font-size: 3.1rem;
 }
 
-.sd-rating__item-smiley:nth-child(3)::after {
+.sd-rating__item-smiley:nth-child(4)::after {
     content: "🙁";
     position: absolute;
     right: -px;
     font-size: 3rem;
 }
 
-.sd-rating__item-smiley:nth-child(4)::after {
+.sd-rating__item-smiley:nth-child(5)::after {
     content: "😐";
     position: absolute;
     right: -px;
     font-size: 3rem;
 }
 
-.sd-rating__item-smiley:nth-child(5)::after {
+.sd-rating__item-smiley:nth-child(6)::after {
     content: "🙂";
     position: absolute;
     right: -px;
     font-size: 3rem;
 }
 
-.sd-rating__item-smiley:nth-child(6)::after {
+.sd-rating__item-smiley:nth-child(7)::after {
     content: "😄";
     position: absolute;
     right: -px;

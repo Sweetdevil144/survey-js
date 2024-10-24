@@ -25,10 +25,10 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/survey/self" element={<SurveyComponent surveyUrl="https://surveyjs-backend-cpov.onrender.com/api/survey/self" />} />
-          <Route path="/survey/individual" element={<SurveyComponent surveyUrl="https://surveyjs-backend-cpov.onrender.com/api/survey/individual" />} />
-          <Route path="/survey/team" element={<SurveyComponent surveyUrl="https://surveyjs-backend-cpov.onrender.com/api/survey/team" />} />
-          <Route path="/survey/peer" element={<SurveyComponent surveyUrl="https://surveyjs-backend-cpov.onrender.com/api/survey/peer" />} />
+          <Route path="/survey/self" element={<SurveyComponent surveyUrl="http://localhost:3000/api/survey/self" />} />
+          <Route path="/survey/individual" element={<SurveyComponent surveyUrl="https://localhost:3000/api/survey/individual" />} />
+          <Route path="/survey/team" element={<SurveyComponent surveyUrl="http://localhost:3000/api/survey/team" />} />
+          <Route path="/survey/peer" element={<SurveyComponent surveyUrl="http://localhost:3000/api/survey/peer" />} />
         </Routes>
       </div>
     </Router>
