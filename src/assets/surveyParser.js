@@ -3,10 +3,12 @@ export const surveyParser = async (data) => {
     if (typeof item === 'object' && !Array.isArray(item) && item !== null) {
       for (const key in item) {
         if (Object.prototype.hasOwnProperty.call(item, key)) {
-          if (item.name === 'top_leaders') {
-            await fetchLeaders(item);
-          } else {
-            await processData(item[key]);
+          if(item.api) {
+            if (item.name === 'top_leaders') {
+              await fetchLeaders(item);
+            } else {
+              await processData(item[key]);
+            }
           }
         }
       }

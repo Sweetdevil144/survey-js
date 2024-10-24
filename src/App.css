@@ -13,6 +13,17 @@
     font-style: normal;
 }
 
+/* Background Styling */
+.sd-root-modern {
+    border-radius: 6px;
+    background: #FFF;
+    /* --sd-base-vertical-padding: 0; */
+}
+
+.sd-element--with-frame {
+    box-shadow : none;
+}
+
 /* Star Item */
 .sd-rating__item-star--selected svg,
 .sd-rating__item-star--selected:not(.sd-rating__item-star--preview):focus-within svg {
@@ -24,6 +35,8 @@
 .sd-rating__item-star--selected:not(.sd-rating__item-star--preview):focus-within svg,
 .sd-rating__item-star svg {
     stroke: #FF9F43;
+    /* I need to make the svf bolder */
+    stroke-width: 3.5;
 }
 
 /* Star Container */
@@ -36,14 +49,7 @@
 
 fieldset {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.sd-selectbase {
-    display: flex;
-    justify-content: left;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
 }
@@ -52,13 +58,13 @@ fieldset {
 .sd-rating__max-text {
     position: absolute;
     left:0;
-    bottom: 0;
+    bottom: -1.5rem;
 }
 
 .sd-rating__min-text {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -1.5rem;
 }
 
 /* Emoji Styling */
@@ -105,7 +111,7 @@ fieldset {
     border-color: white;
 }
 
-/* Description CSS */
+/* Description CSS : TODO*/
 .sv-string-viewer.sv-string-viewer--multiline {
     
 }
@@ -120,7 +126,81 @@ fieldset {
     height: 44px;
 }
 
-.sd-rating__item--selected {
+/* Kudos/WOW Button Styling */
+.sd-rating__item--selected, .sd-rating__item--selected:focus-within {
     background: var(--Secondary-500---Main, #0185E4);
-    width: 44px;
+    min-width: 44px;
+    max-width: 100%;
+}
+
+.sd-rating__item:focus-within {
+    box-shadow: none;
+}
+
+.sd-rating__item {
+   padding-top: 1rem;
+}
+
+.sv-string-viewer p {
+    margin-top: 0.1rem;
+}
+
+.sd-selectbase {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+}
+
+/* WOW / Kudos element */
+div[data-key="recognition0"] .sd-rating fieldset {
+    display: flex;
+    justify-content: left;
+}
+
+/* Rating Button */
+div[data-key="recognition0"] .sd-rating fieldset .sd-rating__item {
+    margin-right: 28px;
+    position: relative;
+    top: 1rem;
+    width: 125px;
+    min-width: 60px;
+    border: 1px solid grey;
+}
+
+div[data-key="recognition0"] .sd-rating fieldset .sd-rating__item--selected {
+    border: 1px solid ;
+    color: #0185E4;
+    background: var(--Secondary-50, linear-gradient(0deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.90) 100%), #0185E4);
+}
+
+/* div[data-key="recognition0"] .sd-rating--wrappable .sd-rating__item-text[data-text="Kudos"] .sv-string-viewer {
+    color: #0185E4;
+} */
+
+div[data-key="recognition0"] .sd-rating__item--selected .sd-rating__item-text .sv-string-viewer {
+  color: #0185E4;
+}
+div[data-key="recognition0"] .sd-rating fieldset .sd-rating__item[data-text="Kudos"] {
+    
+}
+
+div[data-key="recognition0"] .sd-rating__item-text[data-text="Kudos"] .sv-string-viewer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+div[data-key="recognition0"] .sd-rating__item-text[data-text="Kudos"] .sv-string-viewer::before {
+  content: '';
+  display: inline-block;
+  width: 18px;  
+  height: 18px;
+  margin-right: 8px;
+  margin-bottom: 1rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.7753 6.9C16.3956 6.45 15.8639 6.075 15.2563 6H14.8766H11.3829V3.75C11.3829 2.1 10.0158 0.75 8.34494 0.75C8.04114 0.75 7.73734 0.9 7.66139 1.2L4.85127 7.5H3.02848C1.73734 7.5 0.75 8.475 0.75 9.75V15C0.75 16.275 1.73734 17.25 3.02848 17.25H13.8892C15.0285 17.25 15.9399 16.425 16.1677 15.375L17.231 8.625C17.307 8.025 17.1551 7.425 16.7753 6.9ZM4.54747 15.75H3.02848C2.57278 15.75 2.26899 15.45 2.26899 15V9.75C2.26899 9.3 2.57278 9 3.02848 9H4.54747V15.75ZM13.8892 15.75C14.269 15.75 14.5728 15.525 14.6487 15.15L15.788 8.325C15.788 8.175 15.788 7.95 15.6361 7.8C15.4842 7.65 15.3323 7.5 15.1044 7.5H14.9525H10.6234C10.1677 7.5 9.86392 7.2 9.86392 6.75V3.75C9.86392 3.075 9.40823 2.55 8.80063 2.325L6.06646 8.4V15.75H13.8892Z" fill="%230185E4"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
 }
