@@ -8,8 +8,6 @@ import { marked } from "marked";
 
 const renderer = {
   image: function (src, _, alt) {
-    console.log(JSON.stringify(src))
-    console.log(alt)
     return `<img src="${src.href}" alt="${alt === undefined ? "Image ALT" : alt}" style="border-radius: 50%; width: 30px; height: 30px;" />`;
   }
 };
@@ -24,7 +22,6 @@ export default function SurveyComponent({ surveyUrl }) {
       const res = await fetch(surveyUrl);
       const data = await res.json();
       const updatedData = await surveyParser(data);
-      console.log(updatedData)
       setSurveyData(updatedData);
     } catch (error) {
       console.error('Error fetching survey:', error);
@@ -51,7 +48,7 @@ export default function SurveyComponent({ surveyUrl }) {
     let str = marked(options.text);
     options.html = str;
   });
-
+  
   DefaultFonts.push("Montserrat, sans-serif");
 
   return <Survey model={survey} />;
