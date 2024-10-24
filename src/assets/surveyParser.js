@@ -36,10 +36,8 @@ const fetchLeaders = async (item) => {
         text: `![${leader.name}](${leader.imageUrl}) ${leader.name}`
       };
     });
-    console.log(item.choices)
     delete item.api;
   } catch (error) {
-    console.log(item)
     console.error('Error fetching leaders:', error);
   }
 };

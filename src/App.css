@@ -10,7 +10,6 @@
 .sd-element__title .sv-string-viewer.sv-string-viewer--multiline, span {
     font-family: Montserrat;
     font-weight: 500;
-    font-size: 14px;
     font-style: normal;
 }
 
@@ -38,6 +37,13 @@
 fieldset {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.sd-selectbase {
+    display: flex;
+    justify-content: left;
     align-items: center;
     width: 100%;
 }
