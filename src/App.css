@@ -87,7 +87,7 @@ fieldset {
     background-color: #838889;
 }
 
-.sd-rating__item-smiley:nth-child(3)::after {
+/* .sd-rating__item-smiley:nth-child(3)::after {
     content: "😣";
     display: inline-block;
     position: absolute;
@@ -116,20 +116,21 @@ fieldset {
     content: "😄";
     position: absolute;
     font-size: 3rem;
-}
+} */
 
-.sd-rating__item-smiley--selected {
+/* .sd-rating__item-smiley--selected {
   border-color: purple;
   border-width: 2px;
   border-style: solid;
-}
+} */
 
 /* Common Smiley Designs */
 .sd-rating__item-smiley, .sd-rating__item-smiley--selected:focus-within, .sd-rating__item-smiley:focus-within {
-    background-color: white;
-    fill: white;
+    background-color: #FFCC4D;
+    fill: #664500;
     box-shadow: none;
     margin: 0 -20px;
+    border-color: white;
 }
 .sd-rating__item-smiley--selected:focus-within {
     border: 1px solid #0185E4;
