@@ -7,6 +7,10 @@
     color: black;
 }
 
+.sd-element__num {
+    display: inline-block;
+}
+
 .sd-element__title .sv-string-viewer.sv-string-viewer--multiline, span {
     font-family: Montserrat;
     font-weight: 500;
@@ -56,15 +60,27 @@ fieldset {
 /* Min-Max Description Alignment */
 .sd-rating__max-text {
     position: absolute;
-    left:0;
-    bottom: -1.5rem;
+    margin-left: 1.2rem;
+    right:0;
+    bottom: 6rem;
 }
 
 .sd-rating__min-text {
     position: absolute;
-    right: 0;
-    bottom: -1.5rem;
+    left: 0;
+    bottom: 6rem;
+    margin-left: 1.2rem;
 }
+
+/* Input Comment Area Styling  */
+
+.sd-question__form-group .sv-string-viewer {
+  display: none;
+}
+.sd-element__content .sd-question__comment-area .sd-input.sd-comment {
+  margin-top: 2rem;
+}
+
 
 /* Emoji Styling */
 .sd-rating__item-smiley {
@@ -73,48 +89,51 @@ fieldset {
 
 .sd-rating__item-smiley:nth-child(3)::after {
     content: "😣";
+    display: inline-block;
     position: absolute;
-    right: -px;
-    font-size: 3.1rem;
+    font-size: 3rem;
 }
 
 .sd-rating__item-smiley:nth-child(4)::after {
     content: "🙁";
     position: absolute;
-    right: -px;
     font-size: 3rem;
 }
 
 .sd-rating__item-smiley:nth-child(5)::after {
     content: "😐";
     position: absolute;
-    right: -px;
     font-size: 3rem;
 }
 
 .sd-rating__item-smiley:nth-child(6)::after {
     content: "🙂";
     position: absolute;
-    right: -px;
     font-size: 3rem;
 }
 
 .sd-rating__item-smiley:nth-child(7)::after {
     content: "😄";
     position: absolute;
-    right: -px;
     font-size: 3rem;
 }
 
 .sd-rating__item-smiley--selected {
-    border-color: white;
+  border-color: purple;
+  border-width: 2px;
+  border-style: solid;
 }
 
-/* Description CSS : TODO*/
-.sv-string-viewer.sv-string-viewer--multiline {
-    
+/* Common Smiley Designs */
+.sd-rating__item-smiley, .sd-rating__item-smiley--selected:focus-within, .sd-rating__item-smiley:focus-within {
+    background-color: white;
+    fill: white;
+    box-shadow: none;
+    margin: 0 -20px;
 }
-
+.sd-rating__item-smiley--selected:focus-within {
+    border: 1px solid #0185E4;
+}
 /* Rating (1-5) Button CSS */
 .sd-rating__item {
     border-radius: 6px;
@@ -128,7 +147,6 @@ fieldset {
 /* Kudos/WOW Button Styling */
 .sd-rating__item--selected, .sd-rating__item--selected:focus-within {
     background: var(--Secondary-500---Main, #0185E4);
-    min-width: 44px;
     max-width: 100%;
 }
 
@@ -142,6 +160,7 @@ fieldset {
 
 .sv-string-viewer p {
     margin-top: 0.1rem;
+    display: inline-block;
 }
 
 .sd-selectbase {
@@ -157,7 +176,7 @@ div[data-key="recognition0"] .sd-rating fieldset {
     justify-content: left;
 }
 
-/* Rating Button */
+/* Rating Button Styling : Kudos */
 div[data-key="recognition0"] .sd-rating fieldset .sd-rating__item {
     margin-right: 28px;
     position: relative;
@@ -173,15 +192,8 @@ div[data-key="recognition0"] .sd-rating fieldset .sd-rating__item--selected {
     background: var(--Secondary-50, linear-gradient(0deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.90) 100%), #0185E4);
 }
 
-/* div[data-key="recognition0"] .sd-rating--wrappable .sd-rating__item-text[data-text="Kudos"] .sv-string-viewer {
-    color: #0185E4;
-} */
-
 div[data-key="recognition0"] .sd-rating__item--selected .sd-rating__item-text .sv-string-viewer {
   color: #0185E4;
-}
-div[data-key="recognition0"] .sd-rating fieldset .sd-rating__item[data-text="Kudos"] {
-    
 }
 
 div[data-key="recognition0"] .sd-rating__item-text[data-text="Kudos"] .sv-string-viewer {
@@ -203,3 +215,107 @@ div[data-key="recognition0"] .sd-rating__item-text[data-text="Kudos"] .sv-string
   background-repeat: no-repeat;
   vertical-align: middle;
 }
+
+/* Form Heading Stylings */
+.sd-html span {
+    display: inline-block;
+    font-family: Montserrat;
+    height: 22px;
+    padding: 0.2rem 0.8rem 0.6rem;
+    margin-left: 1.2rem;
+    align-items: center;
+    gap: 3px;
+    border-radius: 4px;
+    border: 1px solid;
+    font-style: normal;
+    font-weight: 500;
+}
+
+#completeness_heading {
+    border-radius: 4px;
+    border: #584CDB;
+    background: rgba(154, 145, 255, 0.12);
+    color: #584CDB;
+}
+
+#quality_heading {
+    border-radius: 4px;
+    border: #23DFEB;
+    background: rgba(35, 223, 235, 0.12);
+    color: #23DFEB;
+}
+
+#timelines_heading {
+    border-radius: 4px;
+    border: #FFD966;
+    background: rgba(255, 217, 102, 0.12);
+    color: #FABF0D;
+}
+
+#innovation_heading {
+    border-radius: 4px;
+    border: #28C76F;
+    background: rgba(40, 199, 111, 0.12);
+    color: #28C76F;
+}
+
+#top_leaders_heading {
+    border-radius: 4px;
+    border: #2196F3;
+    background: rgba(33, 150, 243, 0.12);
+    color: #2196F3;
+}
+
+#feedback_heading {
+    border-radius: 4px;
+    border: #FF9F43;
+    background: rgba(255, 159, 67, 0.12);
+    color: #FF9F43;
+}
+
+/* Leader Image and Checkbox Styling */
+.sd-selectbase__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Very Important to remove checkbox */
+.sd-item__decorator {
+    display: none; 
+}
+
+.sd-item {
+    padding: 0;
+}
+
+.sd-item.sd-checkbox.sd-checkbox--checked img {
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+/* Reduce Size by 2px so that extra border applied deos not distore the x-axis orientation */
+.sd-item.sd-checkbox.sd-checkbox--checked img.leader_image {
+    height: 40px;
+    width: 40px;
+}
+
+fieldset.sd-selectbase {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Small Screen Media Query */
+@media (max-width: 600px) {
+  .leader-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .leader_name {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
+
