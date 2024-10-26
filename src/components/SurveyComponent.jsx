@@ -8,7 +8,7 @@ import { marked } from "marked";
 
 const renderer = {
   image: function (src) {
-    if(src.text) {
+    if (src.text) {
       return `
         <div class="leader-container" style="display: flex; align-items: center;">
           <img src="${src.href}" alt="${src.text}" 
@@ -17,9 +17,14 @@ const renderer = {
         </div>
       `;
     } else {
-      return `<img src="${src.href}" alt="smiley" style="width: 42px; height: 42px;" class="smiley_image" />`;
-      }
+      return `
+        <div class="smiley-container" style="display: flex; align-items: center;">
+          <img src="${src.href}" alt="smiley_image" 
+            style="border-radius: 50%; width: 42px; height: 42px;" class="smiley_image" />
+        </div>
+      `;
     }
+  }
 };
 
 marked.use({ renderer });
@@ -38,16 +43,6 @@ export default function SurveyComponent({ surveyUrl }) {
       console.error('Error fetching survey:', error);
     }
   };
-  
-  const fetchEmojiData = async () => {
-      try {
-        const res = await fetch('http://localhost:3000/api/emojis');
-        const { emojis } = await res.json();
-        setEmojiData(emojis);
-      } catch (error) {
-        console.error('Error fetching emojis:', error);
-      }
-    };
 
   useEffect(() => {
     fetchSurveyData();
@@ -71,11 +66,19 @@ export default function SurveyComponent({ surveyUrl }) {
   });
   
   survey.onAfterRenderQuestion.add((survey, options) => {
-    if (options.question.useType === "emoji") {
-      let emojis = options.htmlElement.querySelectorAll('.emoji_image');
-      emojis.forEach(emoji => {
-        emoji.addEventListener('click', function() {
-          options.question.value = this.alt; // Setting the value to the alt text of the image or any identifier
+    if (options.question.rateType === "smileys") {
+      const smileyLabels = options.htmlElement.querySelectorAll('.sd-rating__item-smiley');
+      smileyLabels.forEach((label, index) => {
+        label.innerHTML = ''; 
+        const img = document.createElement('img');
+        img.src = `/public/emojis/smiley_${index + 1}.svg`;
+        img.alt = `Smiley ${index + 1}`;
+        img.className = 'emoji_image';
+        img.style.height = '42px';
+        img.style.width = '42px';
+        label.appendChild(img);
+        img.addEventListener('click', function () {
+          options.question.value = index + 1;
         });
       });
     }
