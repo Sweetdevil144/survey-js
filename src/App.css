@@ -87,54 +87,23 @@ fieldset {
     background-color: #838889;
 }
 
-/* .sd-rating__item-smiley:nth-child(3)::after {
-    content: "😣";
-    display: inline-block;
-    position: absolute;
-    font-size: 3rem;
-}
-
-.sd-rating__item-smiley:nth-child(4)::after {
-    content: "🙁";
-    position: absolute;
-    font-size: 3rem;
-}
-
-.sd-rating__item-smiley:nth-child(5)::after {
-    content: "😐";
-    position: absolute;
-    font-size: 3rem;
-}
-
-.sd-rating__item-smiley:nth-child(6)::after {
-    content: "🙂";
-    position: absolute;
-    font-size: 3rem;
-}
-
-.sd-rating__item-smiley:nth-child(7)::after {
-    content: "😄";
-    position: absolute;
-    font-size: 3rem;
-} */
-
-/* .sd-rating__item-smiley--selected {
-  border-color: purple;
-  border-width: 2px;
-  border-style: solid;
-} */
-
 /* Common Smiley Designs */
 .sd-rating__item-smiley, .sd-rating__item-smiley--selected:focus-within, .sd-rating__item-smiley:focus-within {
-    background-color: #FFCC4D;
-    fill: #664500;
-    box-shadow: none;
-    margin: 0 -20px;
+    background-color: white;
+    fill: white;
+    padding: 0px;
     border-color: white;
 }
-.sd-rating__item-smiley--selected:focus-within {
-    border: 1px solid #0185E4;
+
+.emoji_image:hover {
+    border: 2px solid #838889;
+    border-radius: 50%;
 }
+
+.sd-rating fieldset {
+    padding: 10px;
+}
+
 /* Rating (1-5) Button CSS */
 .sd-rating__item {
     border-radius: 6px;
